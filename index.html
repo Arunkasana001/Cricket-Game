@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cricket Game</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1> Bat  Ball Stump Game </h1>
@@ -11,17 +12,17 @@
     let computerChoice = generateComputerChoice();
      let resultMsg = getResult('Bat', computerChoice);
   showResult('Bat', computerChoice, resultMsg);
-    ">Bat</button>
+    "><img src="bat.png" alt="choice-image"></button>
 
     <button class="choice-button" onclick="computerChoice = generateComputerChoice();
     computerChoice = generateComputerChoice();
     resultMsg = getResult('Ball', computerChoice);
-    showResult('Ball', computerChoice, resultMsg);">Ball</button>
+    showResult('Ball', computerChoice, resultMsg);"><img src="ball.png" alt="choice-image" height="75px"></button>
 
 
     <button class="choice-button" onclick="computerChoice = generateComputerChoice();
      resultMsg = getResult('Stump', computerChoice);
-    showResult('Stump', computerChoice, resultMsg);">Stump</button>
+    showResult('Stump', computerChoice, resultMsg);"><img src="stump.png" alt="choice-image" height=90px"></button>
 
     
     <h3 id="user-move"></h3>
