@@ -77,7 +77,7 @@ function showResult(userMove, computerMove, result) {
 
     document.querySelector('#user-move').innerText = userMove ? `You have chosen ${userMove}` : '';
 
-    document.querySelector('#computer-move').innerText = computerMove ? `computer choice is  chosen ${computerMove}` : '';
+    document.querySelector('#computer-move').innerText = computerMove ? `computer choice is   ${computerMove}` : '';
 
     document.querySelector('#result').innerText = result || '';
 
