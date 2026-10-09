@@ -45,7 +45,20 @@
 
         <div class="score-card">
             <span class="score-label">Scoreboard</span>
-            <strong id="score">Won:0, Lost:0, Tie:0</strong>
+            <div class="score-grid" id="score" aria-label="Match score">
+                <div class="score-stat">
+                    <strong id="wins">0</strong>
+                    <span>Won</span>
+                </div>
+                <div class="score-stat">
+                    <strong id="losses">0</strong>
+                    <span>Lost</span>
+                </div>
+                <div class="score-stat">
+                    <strong id="ties">0</strong>
+                    <span>Tied</span>
+                </div>
+            </div>
         </div>
 
         <button class="reset-button" id="reset-button" type="button">Reset Score</button>

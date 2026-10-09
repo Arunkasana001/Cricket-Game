@@ -150,6 +150,32 @@ h1 {
     margin-bottom: 18px;
 }
 
+.score-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.score-stat {
+    display: grid;
+    gap: 4px;
+    padding: 10px 6px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.score-stat strong {
+    color: #ffffff;
+    font-size: 1.4rem;
+}
+
+.score-stat span {
+    color: #a6d7ff;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
 .reset-button {
     border: none;
     border-radius: 999px;

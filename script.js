@@ -8,11 +8,7 @@ function resetScore(scoreData) {
     score = scoreData ? JSON.parse(scoreData) : {
         win: 0,
         lost: 0,
-        tie: 0,
-    };
-
-    score.dispayScore = function () {
-        return `Won:${score.win}, Lost:${score.lost}, Tie:${score.tie}`;
+        tie: 0
     };
 
     showResult();
@@ -75,7 +71,9 @@ function showResult(userMove, computerMove, result) {
     document.querySelector('#user-move').innerText = userMove ? `You: ${userMove}` : 'You: Ready?';
     document.querySelector('#computer-move').innerText = computerMove ? `Computer: ${computerMove}` : 'Computer: Waiting...';
     document.querySelector('#result').innerText = result || 'Make your move to begin the match!';
-    document.querySelector('#score').innerText = score.dispayScore();
+    document.querySelector('#wins').innerText = score.win;
+    document.querySelector('#losses').innerText = score.lost;
+    document.querySelector('#ties').innerText = score.tie;
 }
 
 document.querySelectorAll('.choice-button').forEach((button) => {
