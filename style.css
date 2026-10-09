@@ -1,16 +1,188 @@
-body{
-    text-align: center;
-}
-.choice-button{
-    height: 100px;
-    width: 100px;
-    border: none;
-    margin: 10px;
-    background-color: rgb(164,212,130);
-    border-radius: 50px;
-    cursor: pointer;
+* {
+    box-sizing: border-box;
 }
 
-.choice-image{
-    height: 50px;
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #061a2d 0%, #103a5c 30%, #1a5f8a 100%);
+    color: #edf8ff;
+}
+
+.game-panel {
+    width: min(92vw, 560px);
+    padding: 32px 28px 28px;
+    background: rgba(11, 26, 41, 0.72);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 28px;
+    box-shadow: 0 30px 60px rgba(5, 15, 30, 0.45);
+    backdrop-filter: blur(12px);
+    text-align: center;
+}
+
+.eyebrow {
+    margin: 0 0 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 0.72rem;
+    color: #8dd7ff;
+}
+
+h1 {
+    margin: 0 0 24px;
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: #ffffff;
+}
+
+.choices {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-bottom: 26px;
+}
+
+.choice-button {
+    width: 138px;
+    min-height: 150px;
+    padding: 18px 12px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.13);
+    border-radius: 24px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.16), rgba(255,255,255,0.05));
+    color: #f6fbff;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.28);
+}
+
+.choice-button:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 16px 28px rgba(0, 0, 0, 0.18);
+    border-color: rgba(141, 215, 255, 0.85);
+}
+
+.choice-button:nth-child(1) {
+    background: linear-gradient(180deg, rgba(89, 189, 255, 0.32), rgba(16, 75, 119, 0.18));
+}
+
+.choice-button:nth-child(2) {
+    background: linear-gradient(180deg, rgba(255, 194, 102, 0.35), rgba(117, 72, 13, 0.2));
+}
+
+.choice-button:nth-child(3) {
+    background: linear-gradient(180deg, rgba(130, 255, 185, 0.28), rgba(11, 75, 49, 0.22));
+}
+
+.choice-image {
+    width: 62px;
+    height: 62px;
+    object-fit: contain;
+    filter: drop-shadow(0 10px 18px rgba(0,0,0,0.25));
+}
+
+.stump-image {
+    width: 74px;
+    height: 74px;
+}
+
+.choice-button span {
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.status-board {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin-bottom: 18px;
+}
+
+.status-item,
+.result-box,
+.score-card {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 18px;
+    padding: 14px 12px;
+}
+
+.status-label,
+.score-label {
+    display: block;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #a6d7ff;
+    margin-bottom: 6px;
+}
+
+.status-item strong,
+.score-card strong {
+    font-size: 1rem;
+    color: #ffffff;
+}
+
+.result-box {
+    margin-bottom: 18px;
+    min-height: 60px;
+    display: grid;
+    place-items: center;
+}
+
+.result-box p {
+    margin: 0;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #d9f5ff;
+}
+
+.score-card {
+    margin-bottom: 18px;
+}
+
+.reset-button {
+    border: none;
+    border-radius: 999px;
+    padding: 12px 26px;
+    font-size: 0.98rem;
+    font-weight: 700;
+    color: #06263b;
+    background: linear-gradient(135deg, #a9f0ff 0%, #ffe087 100%);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 10px 24px rgba(255, 222, 129, 0.28);
+}
+
+.reset-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 28px rgba(255, 222, 129, 0.35);
+}
+
+@media (max-width: 480px) {
+    .game-panel {
+        padding: 24px 18px 20px;
+    }
+
+    .choices {
+        gap: 12px;
+    }
+
+    .choice-button {
+        width: 110px;
+        min-height: 136px;
+    }
+
+    .status-board {
+        grid-template-columns: 1fr;
+    }
 }
